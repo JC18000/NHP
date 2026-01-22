@@ -14,6 +14,13 @@ While nominally tied to the LANCER ttrpg (table-top roleplaying game) system, by
 5. That JSONL file (or the cleaned plaintext from step 3) is then fed into a RAG-based AI setup. The system is set up to handle multiple input files at once.
 6. Everything runs locally using Ollama, and *isn't* super slow when doing so.
 
+## Current capabilities (assuming I keep this readme up to date)
+1. Perform the chopping up, slicing, dicing, and everything-nicing of a perfectly good PDF into an ugly plaintext file
+2. Run an chatbot "application" (Tkinter GUI built in 30 seconds) using frankly way too much context to run with the response times it does
+
+Sure, this doesn't sound impressive, but the version number is currently -1.0, which is to say it's nowhere close to demo-able.
+I may seem unprofessional here, but that's because this is, strictly speaking, a hobby project. Mind the CamelCase, please (one way to tell what wasn't AI generated, at least...).
+
 ## Challenges
 
 1. Extracting the PDF: This one took me a long time experimenting to get a solution that both worked, and worked *well*. I don't want to manually parse the plaintext output of a ~500 page PDF for errors by hand. Also, the PDF that I am using contains custom glyphs embedded in the text. Thankfully, all I needed for that was to translate the unicode value to a plaintext name (i.e "" became "ACCURACY") Even with that, pymupdf can only handle so much, and there are often letter combos that result in unknown unicode values. That's what the cleaner is for.
